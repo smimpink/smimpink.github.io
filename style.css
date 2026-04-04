@@ -1,7 +1,7 @@
-/* ── Reset ── */
+/* — Reset — */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* ── Base ── */
+/* — Base — */
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     background: #eaecee;
@@ -12,7 +12,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* ── Page container ── */
+/* — Page container — */
 .page {
     width: 100%;
     max-width: 780px;
@@ -22,7 +22,7 @@ body {
     padding: 24px 48px 60px;
 }
 
-/* ── Navigation ── */
+/* — Navigation — */
 nav {
     display: flex;
     align-items: center;
@@ -42,190 +42,134 @@ nav a {
     font-size: 17px;
     color: #2c2c2c;
     text-decoration: none;
-    padding: 6px 24px;
-    letter-spacing: 0.2px;
-    transition: color 0.15s;
+    padding: 6px 16px;
+    transition: color 0.2s;
+    white-space: nowrap;
 }
 
-nav a:hover {
-    color: #666;
-}
+nav a:hover { color: #666; }
+nav a.active { font-weight: 600; }
 
-nav a.active {
-    font-weight: 500;
-}
-
-/* ── Main content ── */
+/* — Main / Home — */
 main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: calc(100vh - 120px);
     text-align: center;
-    padding: 40px 20px;
+    padding-top: 40px;
 }
 
-/* ── Portrait photo ── */
 .portrait {
-    width: 300px;
-    height: 300px;
+    width: 450px;
+    max-width: 100%;
+    height: auto;
     border-radius: 0;
-    object-fit: cover;
+    object-fit: contain;
     margin-bottom: 36px;
-    filter: grayscale(5%);
     box-shadow: 0 2px 16px rgba(0,0,0,0.1);
+    image-rendering: -webkit-optimize-contrast;
 }
 
-/* ── Bio text ── */
 .bio {
-    font-size: 20px;
-    line-height: 1.55;
     max-width: 520px;
-    margin-bottom: 8px;
-    color: #2c2c2c;
-}
-
-.bio strong {
-    font-weight: 600;
+    margin: 0 auto 16px;
+    font-size: 18px;
+    line-height: 1.65;
 }
 
 .contact {
-    font-size: 16px;
+    margin-top: 28px;
+    font-size: 15px;
     color: #666;
-    margin-top: 20px;
     letter-spacing: 0.3px;
 }
 
-/* ── Inner pages ── */
+.social-links {
+    margin-top: 14px;
+    font-size: 15px;
+}
+
+.social-links a {
+    color: #555;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.2s;
+}
+
+.social-links a:hover { color: #222; }
+
+/* — Content pages — */
 .content {
-    max-width: 640px;
-    margin: 60px auto 0;
-    padding: 0 12px;
+    padding-top: 40px;
 }
 
 .content h1 {
-    font-size: 26px;
+    font-size: 28px;
     font-weight: 600;
-    margin-bottom: 36px;
-    text-align: center;
+    margin-bottom: 32px;
 }
 
 .content h2 {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #888;
-    margin-top: 40px;
+    margin-top: 36px;
     margin-bottom: 16px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid #d0d0d0;
+    color: #333;
 }
 
-.content h2:first-of-type {
-    margin-top: 0;
-}
-
-.content p,
-.content li {
-    font-size: 15px;
-    line-height: 1.7;
-    color: #3a3a3a;
-    margin-bottom: 12px;
-}
-
-.content ol,
 .content ul {
     list-style: none;
     padding: 0;
 }
 
 .content li {
-    padding: 10px 0;
-    border-bottom: 1px solid #e8e8e8;
-}
-
-.content li:last-child {
-    border-bottom: none;
+    margin-bottom: 18px;
+    font-size: 16px;
+    line-height: 1.55;
 }
 
 .pub-title {
-    font-weight: 500;
-    color: #2c2c2c;
+    font-weight: 600;
+}
+
+.pub-coauthors {
+    color: #666;
+    font-size: 15px;
 }
 
 .pub-venue {
     font-style: italic;
-}
-
-.pub-coauthors {
-    color: #888;
-    font-size: 14px;
-}
-
-.pub-status {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    padding: 2px 8px;
-    border-radius: 3px;
-    background: #e0e4ea;
     color: #555;
-    margin-left: 4px;
-}
-
-.press-outlet {
-    font-weight: 600;
+    font-size: 15px;
 }
 
 .pub-link {
-    color: #4a7ab5;
+    color: #444;
     text-decoration: none;
-    font-size: 13px;
+    border-bottom: 1px solid #ccc;
+    transition: color 0.2s, border-color 0.2s;
 }
 
 .pub-link:hover {
-    text-decoration: underline;
+    color: #111;
+    border-color: #888;
 }
 
-/* ── Social links (home) ── */
-.social-links {
-    display: flex;
-    gap: 20px;
-    margin-top: 16px;
-}
-
-.social-links a {
-    font-size: 15px;
-    color: #888;
+.course-link {
+    color: #444;
     text-decoration: none;
-    transition: color 0.15s;
+    border-bottom: 1px solid #ccc;
+    font-size: 14px;
+    transition: color 0.2s, border-color 0.2s;
 }
 
-.social-links a:hover {
-    color: #2c2c2c;
+.course-link:hover {
+    color: #111;
+    border-color: #888;
 }
 
-/* ── Responsive ── */
+/* — Responsive — */
 @media (max-width: 600px) {
-    .page {
-        padding: 16px 20px 48px;
-    }
-    nav a {
-        font-size: 14px;
-        padding: 6px 12px;
-    }
-    .bio {
-        font-size: 17px;
-    }
-    .portrait {
-        width: 240px;
-        height: 240px;
-    }
-    .content {
-        margin-top: 36px;
-    }
+    .page { padding: 16px 20px 40px; }
+    nav a { font-size: 14px; padding: 6px 8px; }
+    .portrait { width: 100%; }
+    .bio { font-size: 16px; }
+    .content h1 { font-size: 24px; }
 }
